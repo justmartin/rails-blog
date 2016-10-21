@@ -10,8 +10,23 @@
   </head>
 
   <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Railsss</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/my-account">My Account</a></li>
+            <li><a href="/sign-out">Sign Out</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <%= flash[:notice] if flash[:notice] %>
     <%= flash[:alert] if flash[:alert] %>
+
     <%= yield %>
+
   </body>
 </html>

@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>Your Account</h1>
+	<h4>First Name</h4>
+	<%= current_user.first_name %>
+	<br>
+	<h4>Last Name</h4>
+	<%= current_user.last_name %>
+	<br>
+	<h4>Email</h4>
+	<%= current_user.email %>
+	<br>
+	<h4>Password</h4>
+	<%= current_user.password %>
+
+	<form action="/edit-account">
+    <button class="btn">Edit Account</button>
+	</form>
+</div>
