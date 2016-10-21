@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def create
-    @user = User.where(params[:id]).first
+    @user = User.where(email: params[:email]).first
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
       redirect_to "/home"

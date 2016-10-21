@@ -8,10 +8,10 @@
 	<%= label_tag(:password, "Password") %>
 	<%= password_field_tag(:password) %>
 
-	<%= submit_tag "Sign In", class: "btn-large" %>
+	<%= submit_tag "Sign In", class: "btn" %>
 
 <% end %>
 
 <%= form_tag("/sign-up", method: "get") do %>
-	<%= submit_tag "Sign Up", class: "btn-large" %>
+	<%= submit_tag "Sign Up", class: "btn" %>
 <% end %>
