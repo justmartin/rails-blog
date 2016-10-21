@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "/" => "sessions#index"
+  get "/sign-up" => "users#index"
+  get "/home" => "home#index"
+
+  post "/sign-in" => "sessions#create"
+
 end
