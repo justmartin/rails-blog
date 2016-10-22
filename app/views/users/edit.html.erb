@@ -1,7 +1,6 @@
 <div class="container">
 
 	<%= form_tag("/update-account", method: "post") do %>
-
 		<%= label_tag(:first_name, "First Name") %>
 		<%= text_field_tag(:first_name,  current_user.first_name) %>
 
@@ -15,7 +14,10 @@
 		<%= password_field_tag(:password, current_user.password) %>
 
 		<%= submit_tag "Update Account", class: "btn" %>
+	<% end %>
 
+	<%= form_tag("/delete-account", method: "post") do %>
+		<%= submit_tag "Delete Account", class: "btn" %>
 	<% end %>
 
 </div>

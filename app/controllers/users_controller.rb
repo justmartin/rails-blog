@@ -15,9 +15,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-  end
-
   def account
     #current_user from application helper/controller
   end
@@ -32,6 +29,12 @@ class UsersController < ApplicationController
                                    email: params[:email],
                                    password: params[:password])
     redirect_to "/my-account"
+  end
+
+  def destroy
+    current_user.destroy
+    flash[:alert] = "Account Deleted. Bad move."
+    redirect_to "/"
   end
 
 end

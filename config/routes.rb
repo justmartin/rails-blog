@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post "/sign-in" => "sessions#create"
   post "/users" => "users#create"
   post "/update-account" => "users#update"
+  post "/delete-account" => "users#destroy"
 
 end
