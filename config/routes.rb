@@ -6,12 +6,16 @@ Rails.application.routes.draw do
   get "/sign-out" => "sessions#destroy"
   get "/my-account" => "users#account"
   get "/edit-account" => "users#edit"
+
   # not using but required
   get "/users" => "users#index"
+  get "/posts" => "posts#index"
 
   post "/sign-in" => "sessions#create"
   post "/users" => "users#create"
   post "/update-account" => "users#update"
   post "/delete-account" => "users#destroy"
+  post "/posts" => "posts#create"
+  post "/delete" => "posts#delete"
 
 end
