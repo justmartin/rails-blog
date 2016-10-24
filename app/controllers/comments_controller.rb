@@ -8,11 +8,8 @@ class CommentsController < ApplicationController
                    user_id: current_user.id,
                    post_id: params[:post_id],
                    )
-p "slut"
-    p comment.errors
 
     redirect_to :back
-
   end
 
 end
