@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get "/sign-out" => "sessions#destroy"
   get "/my-account" => "users#account"
   get "/edit-account" => "users#edit"
+  get "/posts/:id" => "posts#show", as: "post"
 
   # not using but required
   get "/users" => "users#index"
-  get "/posts" => "posts#index"
+  get "/comments" => "comments#index"
 
   post "/sign-in" => "sessions#create"
   post "/users" => "users#create"
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   post "/delete-account" => "users#destroy"
   post "/posts" => "posts#create"
   post "/delete" => "posts#delete"
+  post "/comments" =>"comments#create"
 
 end

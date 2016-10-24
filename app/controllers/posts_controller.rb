@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:delete, :show]
 
   def index
   end
@@ -12,9 +13,18 @@ class PostsController < ApplicationController
 
   def delete
     p params.inspect
-    post = Post.find(params[:id])
-    post.destroy
+    @post.destroy
     redirect_to "/home"
+  end
+
+  def show
+    @comments = Comment.all
+  end
+
+  private
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
 end
