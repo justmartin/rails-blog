@@ -44,6 +44,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.reverse
+    @followers = @user.followers
+    @followings = @user.followings
   end
 
 end

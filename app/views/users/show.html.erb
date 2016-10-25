@@ -3,6 +3,8 @@
 	<div class="center-align">
 		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
+		<span>Followers: <%= @followers.count %></span> <span>Following: <%= @followings.count %></span>
+
 		<%= form_for Relationship.new do |form| %>
 			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= form.submit "Follow", class: "btn" %>
@@ -29,7 +31,5 @@
 	    </div>
 	  </div>
 	<% end %>
-
-
 
 </div>
