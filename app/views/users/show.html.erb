@@ -9,7 +9,12 @@
 			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= form.submit "Follow", class: "btn" %>
 		<% end %>
-		<!-- Relationship.where(follower_id: 1).map(&:followee_id) -->
+
+		<%= form_tag("/unfollow", method: "post") do %>
+			<%= hidden_field_tag "followee_id", @user.id %>
+			<%= submit_tag "Unfollow", class: "btn" %>
+		<% end %>
+
 	</div>
 
 	<% @posts.each do |post| %>

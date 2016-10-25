@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   post "/delete" => "posts#delete"
   post "/comments" => "comments#create"
   post "/relationships" => "relationships#create"
+  post "/unfollow" => "relationships#delete"
 
 end
