@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = Comment.all
+    @comments = @post.comments
   end
 
   private

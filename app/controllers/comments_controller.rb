@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(content: params[:comment][:content],
-                   user_id: current_user.id,
-                   post_id: params[:post_id],
-                   )
+                             user_id: current_user.id,
+                             post_id: params[:post_id],
+                            )
 
     redirect_to :back
   end
