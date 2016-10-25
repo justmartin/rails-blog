@@ -7,10 +7,13 @@ Rails.application.routes.draw do
   get "/my-account" => "users#account"
   get "/edit-account" => "users#edit"
   get "/posts/:id" => "posts#show", as: "post"
+  get "/users/all" => "users#all"
+  get "/users/:id" => "users#show", as: "user"
 
   # not using but required
   get "/users" => "users#index"
   get "/comments" => "comments#index"
+  get "/relationships" => "relationship#index"
 
   post "/sign-in" => "sessions#create"
   post "/users" => "users#create"
@@ -18,6 +21,7 @@ Rails.application.routes.draw do
   post "/delete-account" => "users#destroy"
   post "/posts" => "posts#create"
   post "/delete" => "posts#delete"
-  post "/comments" =>"comments#create"
+  post "/comments" => "comments#create"
+  post "/relationships" => "relationships#create"
 
 end

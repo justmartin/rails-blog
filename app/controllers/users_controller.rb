@@ -37,4 +37,13 @@ class UsersController < ApplicationController
     redirect_to "/"
   end
 
+  def all
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts.reverse
+  end
+
 end
