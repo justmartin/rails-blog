@@ -4,8 +4,10 @@
 		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
 		<%= form_for Relationship.new do |form| %>
+			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= form.submit "Follow", class: "btn" %>
 		<% end %>
+		<!-- Relationship.where(follower_id: 1).map(&:followee_id) -->
 	</div>
 
 	<% @posts.each do |post| %>
