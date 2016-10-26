@@ -1,5 +1,7 @@
 # README
 
+https://justins-rails-blog.herokuapp.com/
+
 * Ruby version
 2.3.0
 
