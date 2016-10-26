@@ -1,5 +1,6 @@
 <div class="container">
 
+<!-- displays form to update user account info -->
 	<%= form_tag("/update-account", method: "post") do %>
 		<%= label_tag(:first_name, "First Name") %>
 		<%= text_field_tag(:first_name,  current_user.first_name) %>

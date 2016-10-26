@@ -16,11 +16,11 @@ class UsersController < ApplicationController
   end
 
   def account
-    #current_user from application helper/controller
+    #current_user stored in application helper/controller
   end
 
   def edit
-    #current_user from application helper/controller
+    #current_user stored in application helper/controller
   end
 
   def update 

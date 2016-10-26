@@ -1,10 +1,12 @@
 <div class="container">
 	
 	<div class="center-align">
+		<!-- displays name of user profile and # of followers -->
 		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
 		<span>Followers: <%= @followers.count %></span> <span>Following: <%= @followings.count %></span>
 
+		<!-- creates new relationship if current user follows/unfollows -->
 		<%= form_for Relationship.new do |form| %>
 			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= form.submit "Follow", class: "btn" %>
@@ -17,6 +19,7 @@
 
 	</div>
 
+	<!-- displays all posts for selected user -->
 	<% @posts.each do |post| %>
 		<div class="row">
 			<div class="col s12 m6">

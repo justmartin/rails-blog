@@ -4,6 +4,7 @@
 			<h3>Welcome, <%= current_user.first_name %></h3>
 	</div>
 
+	<!-- creates form for current user to post -->
 	<div class="row">
 		<%= form_for Post.new do |form| %>
 			<%= form.label :title %>
@@ -16,6 +17,7 @@
 		<% end %>
 	</div>
 
+	<!-- displays all posts with options to view/delete -->
 	<% @posts.each do |post| %>
 		<div class="row">
 			<div class="col s12 m6">
