@@ -5,14 +5,15 @@
 	</div>
 
 	<!-- creates form for current user to post -->
-	<div class="row">
+	<div class="row center-align">
 		<%= form_for Post.new do |form| %>
 			<%= form.label :title %>
 			<%= form.text_field :title %>
-
-			<%= form.label :content %>
+			<br>
+			<%= form.label :Text %>
 			<%= form.text_area :content %>
-
+			<br>
+			<br>
 			<%= form.submit class: "btn" %>
 		<% end %>
 	</div>
@@ -20,7 +21,7 @@
 	<!-- displays all posts with options to view/delete -->
 	<% @posts.each do |post| %>
 		<div class="row">
-			<div class="col s12 m6">
+			<div class="col s12">
 	    	<div class="card">
 
 	        <div class="card-content">
@@ -31,9 +32,8 @@
 
 	        <div class="card-action">
 						<%= link_to "View Post", post %>
-
 						<br>
-
+						<br>
 						<%= form_tag("/delete", method: "post") do %>
 	        		<%= hidden_field_tag "id", post.id %>
 							<%= submit_tag "Delete", class: "btn" %>

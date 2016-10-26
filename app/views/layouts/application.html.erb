@@ -10,20 +10,22 @@
   </head>
 
   <body>
-    <!-- nav-bar displayed on all pages -->
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Railsss</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/users/all">Users</a></li>
-            <li><a href="/my-account">My Account</a></li>
-            <li><a href="/sign-out">Sign Out</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <!-- nav-bar displayed on all pages if there is a current user -->
+      <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Rails Blog</a>
+            <ul class="right hide-on-med-and-down">
+              <% unless request.url == "http://localhost:3000/" || request.url == "http://localhost:3000/sign-up" %>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/users/all">Users</a></li>
+                <li><a href="/my-account">My Account</a></li>
+                <li><a href="/sign-out">Sign Out</a></li>
+              <% end %>
+            </ul>
+          </div>
+        </nav>
+      </div>
 
     <!-- flash notifications enabled throughout site -->
     <%= flash[:notice] if flash[:notice] %>

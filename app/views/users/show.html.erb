@@ -5,24 +5,26 @@
 		<h3><%= @user.first_name %> <%= @user.last_name %></h3>
 
 		<span>Followers: <%= @followers.count %></span> <span>Following: <%= @followings.count %></span>
-
+		<br>
+		<br>
 		<!-- creates new relationship if current user follows/unfollows -->
 		<%= form_for Relationship.new do |form| %>
 			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= form.submit "Follow", class: "btn" %>
 		<% end %>
-
+		<br>
 		<%= form_tag("/unfollow", method: "post") do %>
 			<%= hidden_field_tag "followee_id", @user.id %>
 			<%= submit_tag "Unfollow", class: "btn" %>
 		<% end %>
+		<br>
 
 	</div>
 
 	<!-- displays all posts for selected user -->
 	<% @posts.each do |post| %>
 		<div class="row">
-			<div class="col s12 m6">
+			<div class="col s12">
 	    	<div class="card">
 
 	        <div class="card-content">

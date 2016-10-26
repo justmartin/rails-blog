@@ -1,24 +1,27 @@
 <div class="container">
 	
-	<h1>Sign Up</h1>
+	<div class="row center-align">
+		<h1>Sign Up</h1>
 
-	<!-- displays form to sign up(creates new user) -->
-	<%= form_for User.new do |form| %>
+		<!-- displays form to sign up(creates new user) -->
+		<%= form_for User.new do |form| %>
 
-	  <%= form.label :first_name %>
-	  <%= form.text_field :first_name %>
+		  <%= form.label :first_name %>
+		  <%= form.text_field :first_name %>
+		  <br>
+		  <%= form.label :last_name %>
+		  <%= form.text_field :last_name %>
+		  <br>
+		  <%= form.label :email %>
+		  <%= form.text_field :email %>
+		  <br>
+		  <%= form.label :password %>
+		  <%= form.text_field :password %>
+		  <br>
+		  <%= form.submit "Sign Up", class: "btn" %>
+		  
+		<% end %>
 
-	  <%= form.label :last_name %>
-	  <%= form.text_field :last_name %>
-
-	  <%= form.label :email %>
-	  <%= form.text_field :email %>
-
-	  <%= form.label :password %>
-	  <%= form.text_field :password %>
-
-	  <%= form.submit class: "btn" %>
-	  
-	<% end %>
+	</div>
 
 </div>

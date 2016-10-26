@@ -1,20 +1,26 @@
 <div class="container">
 
-	<!-- displays current user account info -->
-	<h1>Your Account</h1>
-	<h4>First Name</h4>
-	<%= current_user.first_name %>
-	<br>
-	<h4>Last Name</h4>
-	<%= current_user.last_name %>
-	<br>
-	<h4>Email</h4>
-	<%= current_user.email %>
-	<br>
-	<h4>Password</h4>
-	<%= current_user.password %>
+	<div class="row center-align">
+		<!-- displays current user account info -->
+		<h3>Your Account</h3>
+		<h5>First Name</h5>
+		<%= current_user.first_name %>
+		<br>
+		<h5>Last Name</h5>
+		<%= current_user.last_name %>
+		<br>
+		<h5>Email</h5>
+		<%= current_user.email %>
+		<br>
+		<h5>Password</h5>
+		<%= current_user.password %>
 
-	<form action="/edit-account">
-    <button class="btn">Edit Account</button>
-	</form>
+		<br>
+		<br>
+
+		<form action="/edit-account">
+	    <button class="btn">Edit Account</button>
+		</form>
+	</div>
+
 </div>

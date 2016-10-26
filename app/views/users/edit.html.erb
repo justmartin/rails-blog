@@ -1,24 +1,29 @@
 <div class="container">
 
-<!-- displays form to update user account info -->
-	<%= form_tag("/update-account", method: "post") do %>
-		<%= label_tag(:first_name, "First Name") %>
-		<%= text_field_tag(:first_name,  current_user.first_name) %>
+	<div class="row center-align">
+		<h3>Account Details</h3>
 
-		<%= label_tag(:last_name, "Last Name") %>
-		<%= text_field_tag(:last_name, current_user.last_name) %>
+	<!-- displays form to update user account info -->
+		<%= form_tag("/update-account", method: "post") do %>
+			<%= label_tag(:first_name, "First Name") %>
+			<%= text_field_tag(:first_name,  current_user.first_name) %>
+			<br>
+			<%= label_tag(:last_name, "Last Name") %>
+			<%= text_field_tag(:last_name, current_user.last_name) %>
+			<br>
+			<%= label_tag(:email, "Email") %>
+			<%= text_field_tag(:email, current_user.email) %>
+			<br>
+			<%= label_tag(:password, "Password") %>
+			<%= password_field_tag(:password, current_user.password) %>
+			<br>
+			<%= submit_tag "Update Account", class: "btn" %>
+		<% end %>
+			<br>
+		<%= form_tag("/delete-account", method: "post") do %>
+			<%= submit_tag "Delete Account", class: "btn" %>
+		<% end %>
 
-		<%= label_tag(:email, "Email") %>
-		<%= text_field_tag(:email, current_user.email) %>
-
-		<%= label_tag(:password, "Password") %>
-		<%= password_field_tag(:password, current_user.password) %>
-
-		<%= submit_tag "Update Account", class: "btn" %>
-	<% end %>
-
-	<%= form_tag("/delete-account", method: "post") do %>
-		<%= submit_tag "Delete Account", class: "btn" %>
-	<% end %>
+	</div>
 
 </div>

@@ -1,23 +1,27 @@
 <div class="container">
 
-	<h1>Log In</h1>
+	<div class="row center-align">
+		<h1>Log In</h1>
 
-	<!-- displays form to login  -->
-	<%= form_tag("/sign-in", method: "post" ) do %>
+		<!-- displays form to login  -->
+		<%= form_tag("/sign-in", method: "post" ) do %>
 
-		<%= label_tag(:email, "Email") %>
-		<%= text_field_tag(:email) %>
+			<%= label_tag(:email, "Email") %>
+			<%= text_field_tag(:email) %>
+			<br>
+			<%= label_tag(:password, "Password") %>
+			<%= password_field_tag(:password) %>
+			<br>
+			<%= submit_tag "Sign In", class: "btn" %>
 
-		<%= label_tag(:password, "Password") %>
-		<%= password_field_tag(:password) %>
+		<% end %>
+	</div>
 
-		<%= submit_tag "Sign In", class: "btn" %>
-
-	<% end %>
-
-	<!-- takes you to sign up page -->
-	<%= form_tag("/sign-up", method: "get") do %>
-		<%= submit_tag "Sign Up", class: "btn" %>
-	<% end %>
+	<div class="row center-align">
+		<!-- takes you to sign up page -->
+		<%= form_tag("/sign-up", method: "get") do %>
+			<%= submit_tag "Sign Up", class: "btn" %>
+		<% end %>
+	</div>
 
 </div>
